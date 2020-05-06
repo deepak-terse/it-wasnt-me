@@ -1,7 +1,11 @@
 {
   "name": "it-wasnt-me",
   "version": "1.0.0",
-  "description": "",
+  "description": "A web platform based on vue framework, vuetify and webpack",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/deepak-terse/it-wasnt-me.git"
+  },
   "main": "index.js",
   "scripts": {
     "dev": "vue serve src/main.js",
@@ -17,6 +21,8 @@
     "webpack": "^4.43.0"
   },
   "dependencies": {
-    "vue": "^2.6.11"
+    "vue": "^2.6.11",
+    "vue-router": "^3.1.6",
+    "vuetify": "^2.2.27"
   }
 }
