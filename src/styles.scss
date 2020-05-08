@@ -1,0 +1,48 @@
+//Default Theme
+$primary: #1976D2;
+$secondary: #424242;
+$accent: #F9F9F9;
+$error: #FF5252;
+$info: #2196F3;
+$success: #4CAF50;
+$warning: #FFC107;
+
+$font-roboto: Roboto;
+
+
+body {
+    margin: 0px;
+    font-family: $font-roboto;
+}
+
+
+.app-container {
+    height:100vh;
+}
+
+.view-container {
+    background-color: $accent;
+    height:100vh;
+    padding:10px 5px;
+}
+
+.view-card{
+    margin:5px;
+    padding:10px;
+    border-radius: 5px;
+    box-shadow: 0px 2px 3px #00000029;
+    background: #bbdefb;
+    // height:98%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+input {
+    background: #bbdefb;
+}
+
+#nav a.router-link-exact-active {
+    color: #42b983;
+  }

@@ -3,7 +3,7 @@ import VueRouter from "vue-router";
 import Home from "../views/Home.vue";
 import Login from "../views/Login.vue";
 import SignUp from "../views/SignUp.vue";
-import PageNotFound from "../views/PageNotFound.vue";
+// import PageNotFound from "../views/PageNotFound.vue";
 
 Vue.use(VueRouter);
 
@@ -14,12 +14,12 @@ Vue.use(VueRouter);
 
 const routes = [
   {
-    path: "/",
+    path: "/home",
     name: "Home",
     component: Home
   },
   {
-    path: "/singup",
+    path: "/register",
     name: "SignUp",
     component: SignUp
   },
@@ -27,13 +27,14 @@ const routes = [
     path: "/login",
     name: "Login",
     component: Login
-  },
-  { path: "*", component: PageNotFound }
+  }
+  // { path: "*", component: PageNotFound }
 
 ];
 
 const router = new VueRouter({
-  routes
+  mode: "history",
+  routes: routes
 });
 
 export default router;

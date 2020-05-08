@@ -17,29 +17,39 @@ module.exports = {
             },
             // this will apply to both plain `.css` files
             // AND `<style>` blocks in `.vue` files
+            // {
+            //     test: /\.s(c|a)ss$/,
+            //     use: [
+            //         'vue-style-loader',
+            //         'css-loader',
+            //         {
+            //             loader: 'sass-loader',
+            //             // Requires sass-loader@^7.0.0
+            //             options: {
+            //                 implementation: require('sass'),
+            //                 fiber: require('fibers'),
+            //                 indentedSyntax: true, // optional
+            //                 data: `@import "@/styles.scss";`
+            //             },
+            //             // Requires sass-loader@^8.0.0
+            //             options: {
+            //                 implementation: require('sass'),
+            //                 sassOptions: {
+            //                     fiber: require('fibers'),
+            //                     indentedSyntax: true, // optional
+            //                     data: `@import "@/styles.scss";`
+            //                 },
+            //             },
+            //         },
+            //     ],
+            // }
             {
-                test: /\.s(c|a)ss$/,
+                test: /\.scss$/,
                 use: [
                     'vue-style-loader',
                     'css-loader',
-                    {
-                        loader: 'sass-loader',
-                        // Requires sass-loader@^7.0.0
-                        options: {
-                            implementation: require('sass'),
-                            fiber: require('fibers'),
-                            indentedSyntax: true // optional
-                        },
-                        // Requires sass-loader@^8.0.0
-                        options: {
-                            implementation: require('sass'),
-                            sassOptions: {
-                                fiber: require('fibers'),
-                                indentedSyntax: true // optional
-                            },
-                        },
-                    },
-                ],
+                    'sass-loader'
+                ]
             }
         ]
     },
