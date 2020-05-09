@@ -9,6 +9,7 @@
 	"main": "index.js",
 	"scripts": {
 		"dev": "vue serve src/main.js",
+		"start": "vue serve src/main.js",
 		"prod": "vue build src/main.js"
 	},
 	"keywords": [],
