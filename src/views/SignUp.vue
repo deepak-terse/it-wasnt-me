@@ -8,9 +8,7 @@
 				<span class="title"><h3>{{title}}</h3></span>
 			</div>
 			<div class="view-card-subtitle-div">
-				<span class="subtitle">
-					{{subtitle}}
-				</span>
+				<span class="subtitle">{{subtitle}}</span>
 			</div>
 			<div class="view-card-input-div">
 				<!-- <input  placeholder="Username"> -->
@@ -69,8 +67,8 @@ export default {
 </script>
 
 <style lang="scss">
-@import '../styles.scss';
-@import '../material.scss';
+@import '../styles/styles.scss';
+@import '../styles/components.scss';
 
 .view-card-avatar-div,
 .view-card-title-div,

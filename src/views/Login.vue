@@ -8,9 +8,7 @@
 				<span class="title"><h3>{{title}}</h3></span>
 			</div>
 			<div class="view-card-subtitle-div">
-				<span class="subtitle">
-					{{subtitle}}
-				</span>
+				<span class="subtitle">{{subtitle}}</span>
 			</div>
 			<div class="view-card-input-div">
 				<!-- <input  placeholder="Username"> -->
@@ -31,7 +29,7 @@
 				</div>
 			</div>
 			<div class="view-card-button-div">
-				<button class="btn btn-submit" v-on:click="login">Login</button>
+				<button class="btn btn-submit" v-on:click="login">{{buttonLabel}}</button>
 			</div>
 			<div class="view-card-additional-options-div">
 				<span class="label"><router-link to="/">{{forgotPasswordLabel}}</router-link></span>
@@ -52,6 +50,7 @@ export default {
 			"password":"",
 			"title": "It Wasn't Me",
 			"subtitle": "Receive anonymous compliments from your friends and send anonymous messages to your friends for free.",
+			"buttonLabel": "Login",
 			"forgotPasswordLabel": "Forgot Password?",
 			"registerLabel": "Don't Have an Account? Register"
 		}
@@ -68,8 +67,8 @@ export default {
 </script>
 
 <style lang="scss">
-@import '../styles.scss';
-@import '../material.scss';
+@import '../styles/styles.scss';
+@import '../styles/components.scss';
 
 .view-card-avatar-div,
 .view-card-title-div,

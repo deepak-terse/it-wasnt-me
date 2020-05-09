@@ -3,7 +3,9 @@ import VueRouter from "vue-router";
 import Home from "../views/Home.vue";
 import Login from "../views/Login.vue";
 import SignUp from "../views/SignUp.vue";
-// import PageNotFound from "../views/PageNotFound.vue";
+import Send from "../views/Send.vue";
+import Received from "../views/Received.vue";
+import PageNotFound from "../views/PageNotFound.vue";
 
 Vue.use(VueRouter);
 
@@ -27,8 +29,18 @@ const routes = [
     path: "/login",
     name: "Login",
     component: Login
-  }
-  // { path: "*", component: PageNotFound }
+  },
+  {
+    path: "/send",
+    name: "Send",
+    component: Send
+  },
+  {
+    path: "/received",
+    name: "Received",
+    component: Received
+  },
+  { path: "*", component: PageNotFound }
 
 ];
 
