@@ -1,6 +1,7 @@
+<!--- =============================== Template =============================== -->
 <template>
     <div class="view-container">
-		<div class="view-card">
+		<div class="mdl-card mdl-shadow--2dp view-card">
             <div class="view-card-title-div">
 				<span class="title"><h3>{{title}}</h3></span>
 			</div>
@@ -8,15 +9,13 @@
 				<span class="subtitle">{{subtitle}}</span>
 			</div>
             <div class="view-card-input-div">
-                <div class="group">
-                    <textarea type="textarea" v-model="message" rows="5" required="required"></textarea>
-                    <span class="highlight"></span>
-                    <span class="bar"></span>
-                    <label>Message</label>
-                </div>
+				<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+					<textarea class="mdl-textfield__input" v-model="message" type="text" rows="3" maxrows="6" id="message"></textarea>
+					<label class="mdl-textfield__label" for="message">Message</label>
+				</div>
             </div>
             <div class="view-card-button-div">
-				<button class="btn btn-submit" v-on:click="login">{{buttonLabel}}</button>
+				<button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" v-on:click="login">{{buttonLabel}}</button>
 			</div>
             <div class="view-card-additional-options-div">
 				<span class="label">{{policyLabel}}</span>
@@ -24,7 +23,9 @@
 		</div>
     </div>
 </template>
+<!--- ============================= Template Ends ============================ -->
 
+<!--- ================================ Script ================================ -->
 <script>
 export default {
     name: "Send",
@@ -47,11 +48,19 @@ export default {
 	}
 };
 </script>
+<!--- ============================== Script Ends ============================= -->
 
-<style lang="scss">
+<!--- ================================= Style ================================ -->
+<style lang="scss" scoped>
 @import '../styles/styles.scss';
-@import '../styles/components.scss';
+// @import '../styles/components.scss';
 
+//To override the defaults
+.view-card{
+    min-height: initial;
+    width: initial;
+    margin:5px;
+}
 
 .view-card-avatar-div,
 .view-card-title-div,
@@ -80,10 +89,12 @@ export default {
 .view-card-button-div,
 .view-card-additional-options-div{
 	padding:5px 0px;
-}
+}	
 
-.view-card-input-div{
-	padding:20px 20px;
+.label{
+	font-size: 12px;
+    line-height: 16px;
 }
 
 </style>
+<!--- ============================== Style Ends ============================== -->

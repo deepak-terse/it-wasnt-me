@@ -9,38 +9,30 @@ import PageNotFound from "../views/PageNotFound.vue";
 
 Vue.use(VueRouter);
 
-// const PageNotFound = { template: '<p>Page not found</p>' }
-// const Home = { template: '<p>home page</p>' }
-// const SignUp = { template: '<p>singup page</p>' }
-// const Login = { template: '<p>login page</p>' }
-
 const routes = [
-  {
-    path: "/home",
-    name: "Home",
-    component: Home
-  },
-  {
-    path: "/register",
-    name: "SignUp",
-    component: SignUp
-  },
-  {
-    path: "/",
-    name: "Login",
-    component: Login
-  },
-  {
-    path: "/send",
-    name: "Send",
-    component: Send
-  },
-  {
-    path: "/received",
-    name: "Received",
-    component: Received
-  },
-  { path: "*", component: PageNotFound }
+	{
+		path: "/home", name: "Home", component: Home,
+		meta: { requiresAuth: true }
+	},
+	{
+		path: "/register", name: "SignUp", component: SignUp,
+		meta: { requiresAuth: false }
+	},
+	{
+		path: "/login", name: "Login", component: Login,
+		meta: { requiresAuth: false }
+	},
+	{
+		path: "/send", name: "Send", component: Send,
+		meta: { requiresAuth: false }
+	},
+	{
+		path: "/received", name: "Received", component: Received,
+		meta: { requiresAuth: true }
+	},
+	{ 	path: "*", component: PageNotFound,
+		meta: { requiresAuth: false } 
+	}
 
 ];
 
@@ -48,5 +40,21 @@ const router = new VueRouter({
   mode: "history",
   routes: routes
 });
+
+function isAuthenticated(){
+	return true;
+}
+
+router.beforeEach((to, from, next) => {
+  if (to.matched.some((record) => record.meta.requiresAuth)) {
+    if (isAuthenticated()) {
+      next()
+    } else {
+      next('/login')
+    }
+  } else {
+    next()
+  }
+})
 
 export default router;

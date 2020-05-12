@@ -1,16 +1,19 @@
+<!--- =============================== Template =============================== -->
 <template>
     <div class="view-container">
-		<div class="view-card" v-for="item in items" :key="item.message">
-            <div class="view-card-message-div">
+        <div class="mdl-card mdl-shadow--2dp view-card" v-for="item in items" :key="item.message">
+            <div class="mdl-card__supporting-text view-card-message-div">
 				<span class="message">{{item.message}}</span>
-			</div>
-            <div class="view-card-date-div">
+            </div>
+            <div class="mdl-card__supporting-text view-card-date-div">
 				<span class="date">{{item.date}}</span>
-			</div>
-		</div>
+            </div>
+        </div>
     </div>
 </template>
+<!--- ============================= Template Ends ============================ -->
 
+<!--- ================================ Script ================================ -->
 <script>
 export default {
   name: "Received",
@@ -42,9 +45,18 @@ export default {
 	}
 };
 </script>
+<!--- ============================== Script Ends ============================= -->
 
+<!--- ================================= Style ================================ -->
 <style lang="scss">
 @import '../styles/styles.scss';
+
+//To override the defaults
+.view-card{
+    min-height: initial;
+    width: initial;
+    margin:5px;
+}
 
 .view-card-message-div,
 .view-card-date-div {
@@ -58,6 +70,5 @@ export default {
 .view-card-date-div {
     justify-content: flex-end;
 }
-
-
 </style>
+<!--- ============================== Style Ends ============================== -->
